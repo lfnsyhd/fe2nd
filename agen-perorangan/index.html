@@ -1,0 +1,686 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>BTN Properti Komersial</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="icon" href="assets/img/favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" charset="UTF-8"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="BTNP Komersial" />
+    <meta name="msapplication-TileImage" content="http://komersial.btnproperti.co.id/assets/img/favicon.jpg" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+
+    <style>
+        .bounce-on-hover {
+            transition: all .2s;
+        }
+
+        .bounce-on-hover:hover {
+            transform: scale(1.02);
+        }
+
+        #mobile_search {
+            height: 36px !important;
+        }
+
+        #spinner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            min-width: 100%;
+            background: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99999999
+        }
+
+        .breadcrumb .breadcrumb-item.active {
+            font-family: Helvetica;
+            font-weight: 700;
+            position: relative;
+            top: 1.4px;
+        }
+
+        .breadcrumb-item+.breadcrumb-item:before {
+            font-family: bootstrap-icons !important;
+            font-size: 12px;
+            font-weight: 700;
+            content: "" !important;
+            position: relative;
+            top: -2px;
+        }
+
+        .dropdown-toggle::after {
+            display: none;
+        }
+
+        @media (max-width: 427px) {
+            #modal-log-in {
+                margin-top: 35px !important;
+            }
+        }
+    </style>
+
+
+    <style>
+
+        .nav-item.active a {
+            color: #0162A8 !important;
+        }
+        
+        .custom-title {
+            margin-bottom: 60px;
+        }
+
+        .hamburger {
+            display: none;
+        }
+
+        .hamburger-menu {
+            opacity: 0;
+            display: none;
+            transition: all .3s;
+            position: fixed;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+        }
+
+        .hamburger-menu.active {
+            opacity: 1;
+        }
+
+        .hamburger-menu ul {
+            margin: 20px;
+            padding: 0;
+            position: relative;
+            top: 40px;
+        }
+
+        .hamburger-menu ul a li {
+            list-style: none;
+            border-bottom: 1px solid rgba(0, 0, 0, .1);
+            padding: 14px 0;
+        }
+
+        .hamburger-menu ul a.active {
+            color: #fdc101;
+        }
+
+        .hamburger-menu .btn-main {
+            width: 200px;
+            margin-top: 60px;
+            padding: 10px 0;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .shape h2 {
+            font-size: 40px;
+        }
+
+        .shape h6 {
+            font-size: 17px;
+        }
+
+        .item_panduan h6 {
+            font-size: 30px;
+        }
+
+        .jumbotron-slider {
+            height: 60vh;
+            margin-top: 76px;
+        }
+
+        .jumbotron {
+            height: 60vh;
+            display: flex !important;
+            flex-direction: column;
+            /* align-items: center; */
+            justify-content: center;
+            background: url('assets/img/inside-weather-Uxqlfigh6oE-unsplash 1.png');
+            background-size: cover;
+            background-position: 50%;
+            position: relative;
+            padding-left: 3rem;
+
+        }
+
+        .slick-dots {
+            bottom: 25px;
+        }
+
+        .slick-dots li button:before {
+            content: '';
+            opacity: 1;
+            background: #fff;
+            border-radius: 50%;
+            width: 13px;
+            height: 13px;
+        }
+
+        .slick-dots li.slick-active button:before {
+            background: #0061a7;
+        }
+
+        .jumbotron::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .3);
+        }
+
+        .jumbotron .container {
+            z-index: 2;
+        }
+
+        .jumbotron-title {
+            font-family: FuturaBT;
+            font-weight: 700;
+            font-size: 3.5rem;
+            font-style: normal;
+            line-height: 42px;
+            margin-bottom: 25px;
+            /* text-align: center; */
+            color: #fff;
+            /* text-shadow: 1px 1.5px 3px rgba(0, 0, 0, 0.40); */
+            /* padding: 0 50px */
+        }
+
+        .jumbotron-title>span {
+            color: #fdc101;
+        }
+
+        .jumbotron h5 {
+            font-size: 20px;
+            font-family: FuturaBT;
+            color: white;
+            font-weight: normal;
+        }
+
+        .jumbotron-button {
+            display: none;
+        }
+
+        @media(min-width: 770px) {
+            .border-right {
+                border-right: 1px solid #F3F3F3;
+            }
+        }
+
+        @media(max-width: 768px) {
+            .hamburger {
+                position: fixed;
+                right: 20px;
+                top: 20px;
+                z-index: 3;
+                height: 20px;
+                width: 20px;
+                background: url('assets/img/shape/hamburger.png') no-repeat;
+                display: inline;
+                cursor: pointer;
+            }
+            .hamburger-close {
+                position: absolute;
+                right: 20px;
+                top: 20px;
+                height: 20px;
+                width: 20px;
+                background: url('assets/img/shape/times.png') no-repeat;
+            }
+            .jumbotron-slider {
+                margin-top: 0;
+                height: 30vh;
+            }
+            .jumbotron {
+                height: 30vh;
+                padding-left: 20px;
+                /* align-items: start; */
+                /* justify-content: end; */
+                /* padding-bottom: 40px; */
+            }
+
+            .jumbotron-title {
+                text-align: left;
+                margin-bottom: 0;
+                font-size: 20px;
+                line-height: 34px;
+            }
+
+            .jumbotron h5 {
+                font-size: 13px;
+            }
+
+            .jumbotron-button {
+                display: block;
+                margin-left: 20px;
+            }
+        }
+
+        /* @media(max-width: 420px) {
+            .jumbotron {
+                height: 55vh;
+            }
+
+            .custom-title {
+                margin-bottom: 0 !important;
+            }
+        }
+
+
+        @media(max-width: 480px) {
+            .custom-title {
+                margin-bottom: 0 !important;
+            }
+        } */
+
+        footer {
+            margin-top: 300px;
+        }
+
+        .dropdown-toggle::after {
+            display: none;
+        }
+
+        #header_top_dekstop {
+            box-shadow: none;
+        }
+
+        .widget-box {
+            position: relative;
+            /* top: -55px; */
+            transition: all .2s;
+            cursor: pointer;
+        }
+
+        .widget-box:hover {
+            position: relative;
+            top: -4px;
+        }
+
+        @media (max-width: 500px) {
+            .shape h2 {
+                font-size: 33px;
+            }
+
+            .shape h6 {
+                font-size: 14px;
+            }
+            .widget-box {
+                position: relative;
+                top: 0px;
+            }
+
+            .widget-box:hover {
+                position: relative;
+                top: -5px;
+            }
+            .item_panduan {
+                height: auto !important;
+            }
+            .item_panduan h6 {
+                font-size: 18px;
+            }
+
+            .slick-dots li {
+                margin: 0;
+            }
+                
+            .slick-dots li button:before {
+                width: 8px;
+                height: 8px;
+            }
+
+            .slick-dots {
+                bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="spinner">
+        <img alt="..." src="assets/img/spinner.gif" style="height: 75px;">
+    </div>
+    <div id="__next">
+        <div>
+            <div>
+
+                <div class="hamburger">
+                </div>
+
+                <div class="hamburger-menu">
+                    <a class="hamburger-close">
+                    </a>
+                    <ul>
+                        <a href="#" class="active">
+                            <li>Home</li>
+                        </a>
+                        <a href="#">
+                            <li>Manajemen Stok</li>
+                        </a>
+                        <a href="#">
+                            <li>Pengajuan KPR</li>
+                        </a>
+                        <a href="#">
+                            <li>Akun Saya</li>
+                        </a>
+                    </ul>
+                    <div class="d-flex justify-content-center">
+                        <a href="#" class="btn btn-main">
+                            Log Out
+                        </a>
+                    </div>
+                </div>
+
+                <nav class="navbar navbar-expand-lg fixed-top" id="header_top_dekstop">
+                    <div class="container">
+                        <div class="navbar-brand p-0 text-center">
+                            <a href="">
+                                <img src="assets/img/logo_home.svg" class="img-fluid nav-img-custom">
+                            </a>
+                        </div>
+                        <div class="" id="nav_main">
+                            <ul class="navbar-nav me-auto"></ul>
+                            <ul class="nav align-items-center nav-ipad-pt">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">Beranda</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Management Stok</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Pengajuan KPR</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Akun Saya</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </nav>
+
+                <!-- Search -->
+                <!-- <div id="menu_mobile" class="menu_mobile row nav_closed">
+                    <div class="d-flex justify-content-between align-items-center w-100 p-0">
+                        <button class="iconMenu p-0" id="iconMenu" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#nav_main_mobile" aria-controls="nav_main_mobile" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <i class="bi bi-list" id="menubar"></i>
+                        </button>
+                        <div id="front_search" class="w-100 align-self-center">
+                            <form method="get" action="https://www.btnproperti.co.id/property/?lokasi="
+                                id="mobile_search"
+                                class="form_mobile_search d-flex align-items-center justify-content-between">
+                                <img src="assets/img/logo_horizontal.svg" id="searchbar-logo" alt="Logo BTN Properti"
+                                    href=""
+                                    style="max-width: 73px; height: 17px; position: absolute;">
+                                <input type="text" class="floating-label-field form-searchbar-input"
+                                    id="searchbar-input" autocomplete="off" value=""
+                                    style="border: none; height: 36px; background: transparent">
+                                <button type="submit"
+                                    style="width: 40px; height: 35px !important; padding: 0 !important; margin: 0 !important; background: transparent; outline: none; border: none">
+                                    <img src="assets/img/icons/search.svg" alt=""
+                                        style="max-width: 18px; max-height: 18px">
+                                </button>
+                            </form>
+                        </div>
+                        <a class="nav-link" data-bs-toggle="modal" type="button" data-bs-target="#modalLogin">
+                            <img src="assets/img/icons/avatar.png" class="img-fluid avatar">
+                        </a>
+                    </div>
+                    <div></div>
+                </div> -->
+
+            </div>
+            <div>
+                <!-- d-flex justify-content-center align-items-center text-center  -->
+                <div class="jumbotron-slider slick">
+                    <div class="jumbotron">
+                        <div class="container">
+                            <h4 class="jumbotron-title"> Selamat Datang <span>Ayundya</span></h4>
+                            <h5>Terus pantau perkembangan akunmu</h5>
+                        </div>
+                    </div>
+                    <div class="jumbotron">
+                        <div class="container">
+                            <h4 class="jumbotron-title"> Selamat Datang <span>Ayundya</span></h4>
+                            <h5>Terus pantau perkembangan akunmu</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-12 my-3 my-sm-5">
+                            <h2>Dashboard Agen</h2>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-4 col-md-3 col-xl-3 mb-3">
+                            <div class="shape card text-white d-flex flex-col align-items-center p-0 py-3 py-sm-5" style="background: url('assets/img/shape/dashboard_1.png'); background-size: cover; background-repeat: no-repeat;">
+                                <h2>34</h2>
+                                <h6>Total Properti</h6>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-3 col-xl-3 mb-3">
+                            <div class="shape card text-white d-flex flex-col align-items-center p-0 py-3 py-sm-5" style="background: url('assets/img/shape/dashboard_2.png'); background-size: cover; background-repeat: no-repeat;">
+                                <h2>34</h2>
+                                <h6>Terjual</h6>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-3 col-xl-3 mb-3">
+                            <div class="shape card text-white d-flex flex-col align-items-center p-0 py-3 py-sm-5" style="background: url('assets/img/shape/dashboard_3.png'); background-size: cover; background-repeat: no-repeat;">
+                                <h2>34</h2>
+                                <h6>Unit Available</h6>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    <div class="row justify-content-center">
+                        <div class="col-xl-9 col-md-9 col-sm-9 mb-3 widget-box mb-5">
+                            <div class="item_panduan card py-5" style="background: #0061a6">
+                                <h6 class="m-auto text-center text-white mb-4">Kelola Properti Anda dengan Tambah PropertiMu</h6>
+                                <div class="d-flex justify-content-center">
+                                    <a href="#" class="btn btn-outline-white" style="width: 250px; border-radius: 30px; box-shadow: 1px 1px 3px rgba(0, 0, 0, .5);">
+                                        Tambah Properti
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        data-nscript="afterInteractive"></script>
+    <script src="assets/js/jquery.js" type="text/javascript"></script>
+    <script src="assets/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/jcrypto.js" type="text/javascript"></script>
+    <script src="assets/js/custom.js" type="text/javascript"></script>
+    <script>
+        $(".hamburger-close").click(() => {
+            $(".hamburger-menu").removeClass("active");
+            $(".hamburger-menu").css({ display: "none" });
+        });
+        $(".hamburger").click(() => {
+            $(".hamburger-menu").toggleClass("active");
+            $(".hamburger-menu").css({ display: $(".hamburger-menu").hasClass("active") ? "inline" : "none" });
+        })
+        $('.slick').slick({
+            fade: true,
+            infinite: true,
+            dots: true,
+            autoplay: true,
+            // fade: true,
+            // fadeSpeed: 1000,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            // prevArrow: '<button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="display: block;"><i class="fa fa-angle-left"></i></button>',
+            prevArrow: '',
+            nextArrow: ''
+        });
+        // const options = {
+        //     enableHighAccuracy: true,
+        //     timeout: 5000,
+        //     maximumAge: 0
+        // };
+
+        // function success(pos) {
+        //     const crd = pos.coords;
+
+        //     console.log('Your current position is:');
+        //     console.log(`Latitude : ${crd.latitude}`);
+        //     console.log(`Longitude: ${crd.longitude}`);
+        //     console.log(`More or less ${crd.accuracy} meters.`);
+        // }
+
+        // function error(err) {
+        //     console.warn(`ERROR(${err.code}): ${err.message}`);
+        // }
+
+        // navigator.geolocation.getCurrentPosition(success, error, options);
+
+        $(".toggle-password").on("mousedown mouseup", function (event) {
+            var input = $($(this).attr("toggle"));
+            if (event.type == "mousedown") {
+                $(this).toggleClass("fa-eye-slash");
+                input.attr("type", "text");
+            }
+            if (event.type == "mouseup") {
+                input.attr("type", "password");
+                $(this).toggleClass("fa-eye-slash");
+            }
+        });
+
+        // form-login
+        $('#form-login').submit((e) => {
+            e.preventDefault();
+
+            var data = $('#form-login').serializeArray();
+
+            // data[1].value = btoa(data[1].value); // Encrypt email
+            // data[2].value = btoa(data[2].value); // Encrypt password
+            data[1].value = encryptText(data[1].value);
+            data[2].value = encryptText(data[2].value);
+
+            $.ajax({
+                type: "POST",
+                url: $('#form-login').attr("action"),
+                data: data,
+                beforeSend: () => {
+                    var template = '<div class="alert alert-primary p-2" style="border-radius: 25px; margin-bottom: 35px"><i class="bi bi-arrow-clockwise" style="margin: 0 5px; position: relative; top: .5px"></i>Mohon tunggu sebentar..</div>';
+                    $('.notification').html(template);
+                    $("#form-login").find("button[type=submit]").attr("disabled", true);
+                },
+                success: (response) => {
+                    console.log(response);
+                    // var url = "";
+
+                    if (response.type == "danger") {
+                        var template = '<div class="alert alert-danger p-2" style="border-radius: 25px; margin-bottom: 35px"><i class="bi bi-exclamation-circle-fill" style="margin: 0 5px; position: relative; top: .5px"></i>' + response.message + '</div>';
+                        $('.notification').html(template);
+
+                        if (response.system) {
+                            $('.notification').html('');
+                            $("#form-login").find(".error-custom").remove();
+                            $("#form-login").find("input").removeClass("border-danger");
+
+                            for (var key in response.system) {
+                                $("#form-login").find(`input[name=${key}]`).addClass("border-danger");
+                                $("#form-login").find(`input[name=${key}]`).parent().append(`<div class='error-custom mt-2'><small class='text-danger text-bold'>${response.system[key]}</small></div>`);
+                            }
+                        }
+
+                        $("#form-login").find("button[type=submit]").attr("disabled", false);
+                    } else {
+                        window.location.href = $('#form-login').data('redirect');
+                    }
+                },
+                error: (error) => {
+                    console.log(error);
+                }
+            });
+        });
+
+        window.onload = () => {
+            document.getElementById("spinner").style.display = "none";
+        }
+
+        // var el = document.getElementById("searchbar-input");
+        // el.addEventListener("focusin", () => {
+        //     document.getElementById("searchbar-logo").style.display = "none";
+        // });
+        // el.addEventListener("focusout", () => {
+        //     var val = el.value;
+        //     if (val == 0) {
+        //         document.getElementById("searchbar-logo").style.display = "block";
+        //     }
+        // });
+
+        $('#form-nav-search').submit((e) => {
+            e.preventDefault();
+            var url = $('#form-nav-search').attr("action");
+            var val = $('#searchbar-input').val();
+
+            if (val.length) {
+                val = encodeURI(val);
+                window.open(`${url}${val}`, '_blank');
+            }
+        });
+
+
+
+        $(".toggle-password").click(function (event) {
+            var input = $($(this).attr("toggle"));
+            $(this).toggleClass("fa-eye-slash");
+            if ($(this).hasClass('fa-eye-slash')) {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+    </script>
+    <script>
+        $("#showMore").click(() => {
+            var products = $(".product");
+            products.each((k, v) => {
+                if ((parseInt(k) + 1) > 2) {
+                    console.log($(".products").get(0));
+                    document.getElementsByClassName("product")[k].style.display = (!$("#showMore").hasClass("active")) ? "block" : "none";
+                }
+            });
+
+            $("#showMore").toggleClass("active");
+
+            if ($("#showMore").hasClass("active")) {
+                $("#showMore").html("Lihat lebih sedikit");
+            } else {
+                $("#showMore").html("Lihat lebih banyak");
+            }
+        });
+    </script>
+</body>
+
+</html>
