@@ -84,7 +84,7 @@
             margin-bottom: 60px;
         }
 
-        .hamburger {
+        .hamburger, .back {
             display: none;
         }
 
@@ -269,6 +269,19 @@
                 display: inline;
                 cursor: pointer;
             }
+
+            .back {
+                position: fixed;
+                left: 20px;
+                top: 20px;
+                z-index: 3;
+                height: 20px;
+                width: 20px;
+                background: url('assets/img/shape/back.png') no-repeat;
+                display: inline;
+                cursor: pointer;
+            }
+
             .hamburger-close {
                 position: absolute;
                 right: 20px;
@@ -385,6 +398,60 @@
             }
         }
     </style>
+
+    <style>
+        .cover {
+            height: 383px;
+            margin-top: 76px;
+            position: relative;
+        }
+
+        .cover .breadcrumb {
+            position: absolute;
+            bottom: 15px;
+        }
+
+        .cover .breadcrumb ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .cover .breadcrumb ul a {
+            color: white;
+            font-size: 24px;
+            font-family: 'FuturaBT';
+            font-weight: normal;
+        }
+
+        .cover .breadcrumb ul a.active {
+            color: #fdc101;
+            font-size: 34px;
+        }
+
+        @media(max-width: 768px) {
+            .cover {
+                height: 200px;
+                margin-top: 0;
+            }
+
+            .cover .breadcrumb {
+                bottom: 0px;
+                margin-bottom: 0.5rem;
+            }
+
+            .cover .breadcrumb ul a {
+                font-size: 16px;
+            }
+
+            .cover .breadcrumb ul a.active {
+                font-size: 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -394,6 +461,10 @@
     <div id="__next">
         <div>
             <div>
+                <a href="index.html">
+                    <div class="back">
+                    </div>
+                </a>
 
                 <div class="hamburger">
                 </div>
@@ -402,13 +473,13 @@
                     <a class="hamburger-close">
                     </a>
                     <ul>
-                        <a href="#" class="active">
+                        <a href="#">
                             <li>Home</li>
                         </a>
                         <a href="#">
                             <li>Manajemen Stok</li>
                         </a>
-                        <a href="pengajuan-kpr.html">
+                        <a href="pengajuan-kpr.html" class="active">
                             <li>Pengajuan KPR</li>
                         </a>
                         <a href="#">
@@ -432,13 +503,13 @@
                         <div class="" id="nav_main">
                             <ul class="navbar-nav me-auto"></ul>
                             <ul class="nav align-items-center nav-ipad-pt">
-                                <li class="nav-item active">
+                                <li class="nav-item">
                                     <a class="nav-link" href="#">Beranda</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Management Stok</a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item active">
                                     <a class="nav-link" href="pengajuan-kpr.html">Pengajuan KPR</a>
                                 </li>
                                 <li class="nav-item">
@@ -484,59 +555,24 @@
 
             </div>
             <div>
+
                 <!-- d-flex justify-content-center align-items-center text-center  -->
-                <div class="jumbotron-slider slick">
-                    <div class="jumbotron">
-                        <div class="container">
-                            <h4 class="jumbotron-title"> Selamat Datang <span>Ayundya</span></h4>
-                            <h5>Terus pantau perkembangan akunmu</h5>
-                        </div>
-                    </div>
-                    <div class="jumbotron">
-                        <div class="container">
-                            <h4 class="jumbotron-title"> Selamat Datang <span>Ayundya</span></h4>
-                            <h5>Terus pantau perkembangan akunmu</h5>
+                <div class="cover" style="background: linear-gradient(to bottom, rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url('assets/img/cover_1.png'); background-size: cover;">
+                    <div class="container">
+                        <div class="breadcrumb">
+                            <ul>
+                                <a href="index.html">
+                                    <li>Beranda ></li>
+                                </a>
+                                <a href="index.html" class="active">
+                                    <li>Pengajuan KPR</li>
+                                </a>
+                            </ul>
                         </div>
                     </div>
                 </div>
                 <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-xl-12 my-3 my-sm-5">
-                            <h2>Dashboard Agen</h2>
-                        </div>
-                    </div>
-
-                    <div class="d-flex justify-content-center gap-2 gap-sm-4">
-                        <div class="shape text-white" style="background: url('assets/img/shape/dashboard_1.png')">
-                            <div class="shape-text">
-                                <h2 class="m-0 p-0">34</h2>
-                                <h6 class="m-0 p-0">Total Properti</h6>
-                            </div>
-                        </div>
-                        <div class="shape text-white" style="background: url('assets/img/shape/dashboard_2.png')">
-                            <div class="shape-text">
-                                <h2 class="m-0 p-0">23</h2>
-                                <h6 class="m-0 p-0">Terjual</h6>
-                            </div>
-                        </div>
-                        <div class="shape text-white" style="background: url('assets/img/shape/dashboard_3.png')">
-                            <div class="shape-text">
-                                <h2 class="m-0 p-0">11</h2>
-                                <h6 class="m-0 p-0">Unit Available</h6>
-                            </div>
-                        </div>
-                    </div>
-                        
-                    <div class="d-flex justify-content-center">
-                        <div class="shape-full card py-5" style="background: #0061a6">
-                            <h6 class="m-auto text-center text-white mb-4">Kelola Properti Anda dengan Tambah PropertiMu</h6>
-                            <div class="d-flex justify-content-center">
-                                <a href="#" class="btn btn-outline-white" style="width: 250px; border-radius: 30px; box-shadow: 1px 1px 3px rgba(0, 0, 0, .5);">
-                                    Tambah Properti
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    <p>Lorem ipsum dolor sit amet.</p>
                 </div>
             </div>
         </div>
