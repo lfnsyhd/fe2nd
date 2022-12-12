@@ -1,0 +1,21 @@
+AGEN PERORANGAN
+====================
+dashboard
+tambah properti
+management stok
+detail properti
+list pengajuan kpr
+detail pengajuan kpr
+detail tracking pengajuan kpr
+pengajuan kpr - isi form - data pengajuan
+pengajuan kpr - isi form - data diri dan pasangan
+pengajuan kpr - isi form - data pekerjaan
+pengajuan kpr - dokumen
+pengajuan kpr - ringkasan
+pengajuan kpr berhasil
+akun saya
+edit profile
+list pesan
+popup chat
+lsit report
+====================
